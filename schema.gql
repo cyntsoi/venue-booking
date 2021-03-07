@@ -1,12 +1,23 @@
 type User{
     identifier: String!
+    bookings: [Booking!] @relation
 }
 
 type Venue{
     name: String!
+    bookings: [Booking!] @relation
+}
+
+type Booking{
+    venue: Venue!
+    user: User!
+}
+
+input UserInput{
+    identifier: String!
 }
 
 type Query{
     allVenues: [Venue!]!
-    allUsers: [User!]!
+    findUserByIdentifier(identifier: String!): User
 }

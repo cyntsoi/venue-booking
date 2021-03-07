@@ -1,5 +1,5 @@
 const sendQuery = require('./utils/sendQuery')
-const {GET_ALL_VENUES} = require ('./utils/venueQueries')
+const {GET_ALL_VENUES} = require ('./queries/venue')
 const formatResponse = require('./utils/formatResponse')
 
 exports.handler = async () => {
