@@ -53,11 +53,11 @@ const SignUpForm = () => {
 }
 
 function App() {
-  const { isLoggedIn, user } = useIdentityContext();
+  const { isLoggedIn, user,logoutUser } = useIdentityContext();
   return (
     <div className="App">
       {
-        isLoggedIn ? <div>{JSON.stringify(user)}</div> : <LoginForm/>
+        isLoggedIn ? <div>{JSON.stringify(user.id)}<button onClick={logoutUser}>Logout</button></div> : <LoginForm/>
       }
     </div>
   );
