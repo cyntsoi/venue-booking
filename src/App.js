@@ -23,7 +23,7 @@ const useUserFormValues = (submitHandler,initialValues = InitialFormValues) => {
       try{
         await submitHandler(formValues)
       } catch(e){
-        console.error(e)
+        console.log(e)
       }
     },
     onInputChange: (e) => {
