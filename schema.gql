@@ -1,0 +1,12 @@
+type User{
+    identifier: String!
+}
+
+type Venue{
+    name: String!
+}
+
+type Query{
+    allVenues: [Venue!]!
+    allUsers: [User!]!
+}

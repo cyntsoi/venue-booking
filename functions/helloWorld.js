@@ -1,4 +1,4 @@
-exports.handler = async function(event, context) {
+exports.handler = async function(event) {
     if (event.httpMethod !== "GET"){
         return {
             statusCode: 500,
