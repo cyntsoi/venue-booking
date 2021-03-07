@@ -3,6 +3,7 @@ const {CREATE_USER} = require("./queries/user")
 const formatResponse = require("./utils/formatResponse")
 
 exports.handler = async (event, context) => {
+    console.log({event,context})
     return formatResponse(200, {message:"keep going"})
     // const {user} = context.clientContext
     // try {
