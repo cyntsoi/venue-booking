@@ -13,7 +13,7 @@ const CREATE_USER = gql`
     mutation ($identifier: String!){
         createUser(data:{identifier:$identifier}){
             _id
-            name
+            identifier
         }
     }
 `
