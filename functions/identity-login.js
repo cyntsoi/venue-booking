@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
         const data = await sendQuery(CREATE_USER, {data: {identifier: user.id}})
         return formatResponse(200, data)
     } catch (e) {
-        console.error(e)
+        console.log(e)
         return formatResponse(500, {message: "something went wrong, too bad!"})
     }
 }
