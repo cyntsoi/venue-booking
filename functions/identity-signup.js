@@ -2,8 +2,8 @@ const sendQuery = require("./utils/sendQuery")
 const {CREATE_USER} = require("./queries/user")
 const formatResponse = require("./utils/formatResponse")
 
-exports.handler = async (event, context) => {
-    const {user} = context.clientContext
+exports.handler = async (event) => {
+    const {user} = JSON.parse(event.body)
     try {
         const data = await sendQuery(CREATE_USER, {identifier: user.id})
         return formatResponse(200, data)
@@ -11,4 +11,5 @@ exports.handler = async (event, context) => {
         console.log(e)
         return formatResponse(500, {message: "something went wrong, too bad!"})
     }
+    return formatResponse(200, {message:"keep going"})
 }
