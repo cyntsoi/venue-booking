@@ -5,7 +5,7 @@ const formatResponse = require("./utils/formatResponse")
 exports.handler = async (event, context) => {
     const {user} = context.clientContext
     try {
-        const data = await sendQuery(CREATE_USER, {data: {identifier: user.id}})
+        const data = await sendQuery(CREATE_USER, {identifier: user.id})
         return formatResponse(200, data)
     } catch (e) {
         console.log(e)
