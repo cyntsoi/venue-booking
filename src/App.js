@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useIdentityContext } from 'react-netlify-identity';
 import {useState} from "react"
@@ -39,7 +38,10 @@ const LoginForm = () => {
     await loginUser(email, password, true);
   }
   const {formValues, onInputChange, onSubmit} = useUserFormValues(submitHandler);
-  return <UserForm formValues={formValues} onInputChange={onInputChange} onSubmit={onSubmit} />
+  return <>
+    <h2>Login</h2>
+    <UserForm formValues={formValues} onInputChange={onInputChange} onSubmit={onSubmit} />
+    </>
 }
 
 const SignUpForm = () => {
@@ -49,7 +51,10 @@ const SignUpForm = () => {
     await loginUser(email, password, true);
   }
   const {formValues, onInputChange, onSubmit} = useUserFormValues(submitHandler);
-  return <UserForm formValues={formValues} onInputChange={onInputChange} onSubmit={onSubmit} />
+  return <>
+    <h2>Sign up</h2>
+    <UserForm formValues={formValues} onInputChange={onInputChange} onSubmit={onSubmit} />
+    </>
 }
 
 function App() {
@@ -57,7 +62,7 @@ function App() {
   return (
     <div className="App">
       {
-        isLoggedIn ? <div>{JSON.stringify(user.id)}<button onClick={logoutUser}>Logout</button></div> : <LoginForm/>
+        isLoggedIn ? <div>{JSON.stringify(user.id)}<button onClick={logoutUser}>Logout</button></div> : <><LoginForm/><SignUpForm /></>
       }
     </div>
   );
